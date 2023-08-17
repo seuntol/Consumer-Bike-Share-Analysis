@@ -43,7 +43,8 @@ They also have a longer average_duration compared to the member subscriber.
 
 The streeter Dr & Grand Avenue have the most casual users start station while most annual member subscribers start station are at Kingsbury St & Kinzie st.
 
-Recommendations: Based on our findings, I will recommend that a member subscription for weekend users be further investigated for approval. This will encourage casual users to possibly subscribe for this plan.
+### Recommendations: 
+Based on our findings, I will recommend that a member subscription for weekend users be further investigated for approval. This will encourage casual users to possibly subscribe for this plan.
 
 I will also recommend a membership plan focussed around average long term users. This could be an incentive for average long duration casual users to subscribe for the member plan.
 
