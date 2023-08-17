@@ -30,11 +30,11 @@ Stakeholders: Lily Moreno, Director of Marketing, Cyclistic executive team.
 # Prepare Phase
 The data has been made available by Motivate International, under license were provided under license. Limitations to the data include: using riders' personally identifiable information, in order to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
 
-Data was downloaded from the AWS server as zip files and saved as .csv files on a local hard drive. The .csv files were then uploaded to Kaggle as a dataset named "cyclistic-historical-data."
+Data was downloaded from the AWS server as zip files and saved as .csv files on a local hard drive. The .csv files were then uploaded to Kaggle as a dataset named "cyclistic-historical-data." You may download the data through the link in he Data folder in this repository.
 
-# Process Phase (see code folder)
+## Process Phase (see code folder)
 
-# Analyze (see code folder)
+## Analyze (see code folder)
 
 # Share Phase
 Insights: We deduce from the frequency plot that casual subscribers are mostly weekend users reflecting the high rate from Friday to Sunday.
