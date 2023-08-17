@@ -1,0 +1,94 @@
+
+#loading libraries
+
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(skimr)
+library(janitor)
+library(tidyr)
+library(dplyr)
+library(stringr)
+
+#Loading Data
+
+Jun_22<- read_csv("/kaggle/input/cyclsitic-historical-data/June_2022.csv")
+Jul_22<- read_csv("/kaggle/input/cyclsitic-historical-data/July_2022.csv")
+Aug_22<- read_csv("/kaggle/input/cyclsitic-historical-data/Aug_2022.csv")
+Sep_22<- read_csv("/kaggle/input/cyclsitic-historical-data/Sept_2022.csv")
+Oct_22<- read_csv("/kaggle/input/cyclsitic-historical-data/Oct_2022.csv")
+Nov_22<- read_csv("/kaggle/input/cyclsitic-historical-data/Nov_2022.csv")
+Dec_22<- read_csv("/kaggle/input/cyclsitic-historical-data/Dec_2022.csv")
+Jan_23<- read_csv("/kaggle/input/cyclsitic-historical-data/Jan_2023.csv")
+Feb_23<- read_csv("/kaggle/input/cyclsitic-historical-data/Feb_2023.csv")
+Mar_23<- read_csv("/kaggle/input/cyclsitic-historical-data/Mar_2023.csv")
+Apr_23<- read_csv("/kaggle/input/cyclsitic-historical-data/Apr_2023.csv")
+May_23<- read_csv("/kaggle/input/cyclsitic-historical-data/May_2023.csv")
+
+# Checking column names
+colnames(Jun_22)
+colnames(Jul_22)
+colnames(Aug_22)
+colnames(Sep_22)
+colnames(Oct_22)
+colnames(Nov_22)
+colnames(Dec_22)
+colnames(Jan_23)
+colnames(Feb_23)
+colnames(Mar_23)
+colnames(Apr_23)
+colnames(May_23)
+
+# Inspecting each data_frame using the str() function
+str(Jun_22)
+str(Jul_22)
+str(Aug_22)
+str(Sep_22)
+str(Oct_22)
+str(Nov_22)
+str(Dec_22)
+str(Jan_23)
+str(Feb_23)
+str(Mar_23)
+str(Apr_23)
+str(May_23)
+
+# Creating a combined data frame for all the months
+all_trips<- bind_rows(Jun_22, Jul_22, Aug_22, Sep_22, Oct_22, Nov_22, Dec_22,
+                      Jan_23, Feb_23, Mar_23, Apr_23, May_23)
+
+# checking column names of combined data
+colnames(all_trips)
+
+# Deleting selected column; start_lat, start_lng, end_lat and end_lng
+all_trips <- all_trips%>%
+  select(-c(start_lat, start_lng, end_lat, end_lng))
+
+# new all_trips column name having deleted the columns
+colnames(all_trips)
+nrow(all_trips)
+dim(all_trips)
+head(all_trips)
+str(all_trips)
+summary(all_trips)
+
+# Creating new column to capture Date, month, day, year and day of the week
+all_trips$date<- as.Date(all_trips$started_at)
+all_trips$month<- format(as.Date(all_trips$date),"%m")
+all_trips$day<- format(as.Date(all_trips$date),"%d")
+all_trips$year<- format(as.Date(all_trips$date),"%Y")
+all_trips$day_of_week<- format(as.Date(all_trips$date), "%A")
+
+#Creating column ride length to capture tripduration in seconds
+all_trips$ride_length<-difftime(all_trips$ended_at,all_trips$started_at)
+
+#Inspecting the structure of columns
+str(all_trips)
+
+is.factor(all_trips$ride_length)
+all_trips$ride_length<- as.numeric(as.character(all_trips$ride_length))
+is.numeric(all_trips$ride_length)
+
+# Removing bad data
+all_trips_v2<- all_trips[!(all_trips$ride_length<0),]
+
