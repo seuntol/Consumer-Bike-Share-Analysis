@@ -1,7 +1,7 @@
 # My Bike Share Analysis - Google Data Analytics Capstone Project
 
 # Objective
-This project was carried out to complete the Google Data Analytics Certification program. It involved using RStudio to deliver on the role assigned to me in determing the behavioural patterns of two categories of users of a bike share service. The project was then uploaded to the data science community Kaggle for peer review.
+This project was carried out to complete the Google Data Analytics Certification program. It involved using R Studio to deliver on the role assigned to me in determing the behavioural patterns of two categories of users of a bike share service. The project was then uploaded to the data science community Kaggle for peer review.
 
 # Scope
 The scope of this analysis will cover from May 2022 to June 2023. The analysis involves the six stages of data analysis; ask, prepare, process, analyse, share and act
