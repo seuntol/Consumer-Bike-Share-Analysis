@@ -50,6 +50,6 @@ I will also recommend a membership plan focussed around average long term users.
 Focus of awareness should be around streeter Dr & Grand Avenue as its the most popular for casual subscribers. Increasing awareness and focussing future strategy in this region has a higher probability of getting more casual subscribers convert to annual members.
 
 # Resources
-https://tidyverse.org
-https://cran.r-project.org
-https://stackoverflow.com
+- https://tidyverse.org
+- https://cran.r-project.org
+- https://stackoverflow.com
